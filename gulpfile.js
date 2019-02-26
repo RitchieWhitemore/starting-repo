@@ -34,7 +34,7 @@ gulp.task("style", function() {
         ]))
 
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest("web/css"))
+        .pipe(gulp.dest("src/css"))
         .pipe(server.reload({stream: true}));
 });
 
@@ -109,10 +109,10 @@ gulp.task("polymer-build", function() {
 
 gulp.task("serve", ["style"], function() {
     server.init({
-        server: "."
+        server: "./src"
     });
     gulp.watch("src/less/**/*.less", ["style"]);
-    gulp.watch("*.html")
+    gulp.watch("src/*.html")
         .on("change", server.reload);
 });
 
