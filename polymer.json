@@ -1,0 +1,15 @@
+{
+  "npm": true,
+  "moduleResolution": "node",
+  "sources": [
+    "src/components/**"
+  ],
+  "extraDependencies": [
+    "node_modules/@webcomponents/webcomponentsjs/**"
+  ],
+  "builds": [{
+    "name": "prod",
+    "basePath": true,
+    "browserCapabilities": ["es2015", "push"]
+  }]
+}
