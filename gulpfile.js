@@ -99,11 +99,19 @@ gulp.task("build", function() {
 
 });
 
-gulp.task("polymer-build", function() {
+gulp.task("polymer-build-backend", function() {
     del(['web/node_modules/**']);
     runCmd("polymer build").exec('', function() {
         gulp.src('build/prod/node_modules/**/*.*')
             .pipe(gulp.dest('web/node_modules/'))
+    });
+});
+
+gulp.task("polymer-build-frontend", function() {
+    del(['src/node_modules/**']);
+    runCmd("polymer build").exec('', function() {
+        gulp.src('build/prod/node_modules/**/*.*')
+            .pipe(gulp.dest('src/node_modules/'))
     });
 });
 
