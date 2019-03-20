@@ -38,6 +38,12 @@ gulp.task("style", function() {
         .pipe(server.reload({stream: true}));
 });
 
+gulp.task("html-build", function () {
+    gulp.src("src/pages/*.html")
+        .pipe(rigger())
+        .pipe(gulp.dest('src/'));
+});
+
 gulp.task("admin-style", function() {
     gulp.src("src/less/admin.less")
         .pipe(plumber())
@@ -120,7 +126,7 @@ gulp.task("serve", ["style"], function() {
         server: "./src"
     });
     gulp.watch("src/less/**/*.less", ["style"]);
-    gulp.watch("src/*.html")
+    gulp.watch("src/pages/**/*.html", ["html-build"])
         .on("change", server.reload);
 });
 
