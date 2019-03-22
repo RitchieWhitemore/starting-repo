@@ -15,9 +15,26 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'cache' => [
+            'class' => 'yii\caching\DummyCache',
+        ],
         'db' => [
             'class' => 'yii\db\Connection',
             'charset' => 'utf8',
+        ],
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                ],
+            ],
+        ],
+        'log' => [
+            'class' => 'yii\log\Dispatcher',
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
         ],
         'urlManager' => [
             'class' => 'yii\web\UrlManager',
@@ -28,15 +45,6 @@ return [
                 '<_c:[\w\-]+>' => '<_c>/index',
                 '<_c:[\w\-]+>/<_a:[\w\-]+>/<id:\d+>' => '<_c>/<_a>',
             ],
-        ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-        ],
-        'cache' => [
-            'class' => 'yii\caching\DummyCache',
-        ],
-        'log' => [
-            'class' => 'yii\log\Dispatcher',
         ],
     ],
     'params' => $params,
