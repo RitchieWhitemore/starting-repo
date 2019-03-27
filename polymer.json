@@ -6,7 +6,10 @@
     "src/components/**"
   ],
   "extraDependencies": [
-    "node_modules/@webcomponents/webcomponentsjs/**"
+    "node_modules/@webcomponents/shadycss/**/*.js",
+    "node_modules/@webcomponents/webcomponentsjs/**/*.js",
+    "node_modules/@polymer/**/*.js",
+    "node_modules/web-animations-js/*.js"
   ],
   "builds": [{
     "name": "prod",

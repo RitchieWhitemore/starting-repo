@@ -37,4 +37,5 @@ yii
 temp/*
 
 node_modules/*
+web/node_modules/*
 build/
